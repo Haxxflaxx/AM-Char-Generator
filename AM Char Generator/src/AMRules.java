@@ -4,14 +4,18 @@ public class AMRules {
 	static int pointRes;
 	static int scoreRes;
 
-	/**Returns the result of a simple die roll**/
+	/**
+	 * Returns the result of a simple die roll
+	 */
 	public static int simpleDie(){	
 		int dieResult = (int)(Math.random() * 10 + 1);
 		
 		return dieResult;
 	}//End of simpleDie
 	
-	/**Returns the result of a stress die roll, -1 if the roll is a botch.**/
+	/**
+	 * Returns the result of a stress die roll, -1 if the roll is a botch.
+	 */
 	public static int stressDie(){		
 		//If the result is a zero or a one a new result is generated.
 		//A result of 1 doubles the resultMultipier
@@ -32,17 +36,23 @@ public class AMRules {
 		return dieResult;
 	}//End of stressDie
 	
-	/**Returns the scoreRes variable**/
+	/**
+	 * Returns the scoreRes variable
+	 */
 	public static int getScoreRes(){
 		return scoreRes;
 	}
 	
-	/**Returns the pointRes variable**/
+	/**
+	 * Returns the pointRes variable
+	 */
 	public static int getPointRes(){
 		return pointRes;
 	}
 	
-	/**Updates characteristics score from points. Returns true if a change has been made**/
+	/**
+	 * Updates characteristics score from points. Returns true if a change has been made
+	 */
 	public static boolean updateCharacteristics(int score, int points){
 		boolean change = false;
 		boolean loop;
@@ -62,7 +72,9 @@ public class AMRules {
 		return change;
 	}//End of updateCharacteristics()
 
-	/**Updates statistics score based on points and base. Returns true if a change has been made**/
+	/**
+	 * Updates statistics score based on points and base. Returns true if a change has been made
+	 */
 	public static boolean updateStatistics(int score, int points, int base){
 		boolean change = false;
 		boolean loop;

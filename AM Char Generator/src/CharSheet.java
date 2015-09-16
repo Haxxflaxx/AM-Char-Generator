@@ -90,20 +90,26 @@ public class CharSheet {
 	
 	//Characteristics management
 	//Functions for Setting the score value, Returning the score value & Adding age points
-	/**Sets the indexed characteristic to value.
-	 * Index: int, per, str, sta, pre, com, dex, qik**/
+	/**
+	 * Sets the indexed characteristic to value.
+	 * Index: int, per, str, sta, pre, com, dex, qik
+	 */
 	public void setCharScore(String index, int value){
 		characteristics[charIndex.get(index)][0] = value;
 	}
 	
-	/**Returns the indexed characteristics value.
-	 * Index: int, per, str, sta, pre, com, dex, qik**/
+	/**
+	 * Returns the indexed characteristics value.
+	 * Index: int, per, str, sta, pre, com, dex, qik
+	 */
 	public int getCharScore(String index){
 		return characteristics[charIndex.get(index)][0];
 	}
 	
-	/**Adds value to the indexed characteristic.
-	 * Index: int, per, str, sta, pre, com, dex, qik**/
+	/**
+	 * Adds value to the indexed characteristic.
+	 * Index: int, per, str, sta, pre, com, dex, qik
+	 */
 	public void addCharPoints(String index, int value){
 		characteristics[charIndex.get(index)][1] += value;
 		updateStat();
@@ -111,14 +117,18 @@ public class CharSheet {
 	
 	//Arts management
 	//Functions for returning score & adding XP
-	/**Returns the indexed art score.
-	 * Index: cr, in, mu, pe, re, an, aq, au, co, he, ig, im, me, te, vi**/
+	/**
+	 * Returns the indexed art score.
+	 * Index: cr, in, mu, pe, re, an, aq, au, co, he, ig, im, me, te, vi
+	 */
 	public int getArtScore(String index){
 		return arts[artIndex.get(index)][0];
 	}
 	
-	/**Adds value to the indexed arts.
-	 * Index: cr, in, mu, pe, re, an, aq, au, co, he, ig, im, me, te, vi**/
+	/**
+	 * Adds value to the indexed arts.
+	 * Index: cr, in, mu, pe, re, an, aq, au, co, he, ig, im, me, te, vi
+	 */
 	public void addArtXp(String index, int value){
 		arts[artIndex.get(index)][1] += value;
 		updateStat();
@@ -126,30 +136,40 @@ public class CharSheet {
 	
 	//Ability management
 	//Functions for adding abilities, scores & XP
-	/**Adds the index value to list of abilities**/
+	/**
+	 * Adds the index value to list of abilities
+	 */
 	public void addAbility(String index){
 		abilIndex.put(index, nextAbilSlot);
 		nextAbilSlot++;
 	}
 	
-	/**Returns the indexed ability score.
-	 * Abilities must be added before it can be returned**/
+	/**
+	 * Returns the indexed ability score.
+	 * Abilities must be added before it can be returned
+	 */
 	public int getAbilityScore(String index){
 		return abilities[abilIndex.get(index)][0];
 	}
 	
-	/**Adds value to indexed ability XP**/
+	/**
+	 * Adds value to indexed ability XP
+	 */
 	public void addAbilityXp(String index, int value){
 		abilities[abilIndex.get(index)][1] += value;
 		updateStat();
 	}
-	/**Returns true if the given ability is in the characters list of abilities**/
+	/**
+	 * Returns true if the given ability is in the characters list of abilities
+	 */
 	public boolean hasAbility(String index){
 		return abilIndex.containsKey(index);
 	}
 	
 	//Statistics update loop
-	/**Converts points into score**/
+	/**
+	 * Converts points into score
+	 */
 	private void updateStat(){
 		//Iterates through and updates characteristics
 		for(int i = 0; i < characteristics.length - 1; i++){
