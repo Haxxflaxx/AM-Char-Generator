@@ -32,15 +32,6 @@ public class CharAdv {
 		return (int)(AMRules.simpleDie() + Math.ceil(character.age / 10) + character.getDecrepScore());
 	}
 	
-	/**
-	 * Adds exposure xp to index ability or art
-	 */
-	static private void exposureXp(CharSheet character, String index){
-		int source = 2;
-		
-		if(character.hasAbility(index)) character.addAbilityXp(index, source);
-		
-		else character.addArtXp(index, source);
-	}
+	
 }
 
